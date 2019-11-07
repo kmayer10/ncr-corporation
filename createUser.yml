@@ -1,0 +1,20 @@
+---
+  - name: First Play
+
+    hosts: ncr
+    
+    become: yes
+
+    become_user: root
+
+    tasks: 
+
+      - nam: Creating Group
+        group: name=ncrc state=present
+
+      - name: Creating User
+        user: 
+          name: kmayer
+          group: ncrc
+          home: /home/kmayer-10
+          state: present
