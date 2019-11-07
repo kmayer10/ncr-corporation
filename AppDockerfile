@@ -1,0 +1,4 @@
+FROM tomcat:8
+
+COPY devops.war /usr/local/tomcat/webapps/devops.war
+
