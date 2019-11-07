@@ -9,7 +9,7 @@
 
     tasks: 
 
-      - nam: Creating Group
+      - name: Creating Group
         group: name=ncrc state=present
 
       - name: Creating User
