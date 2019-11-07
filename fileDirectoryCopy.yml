@@ -1,0 +1,23 @@
+---
+
+  - name: Playbook for FILE & COPY module along with understanding to change the ownership and permissions
+
+    hosts: ncr
+
+    become: yes
+
+    tasks: 
+      - name: creating directory
+        file: 
+          path: /opt/test
+          mode: 744
+          state: directory
+
+
+      - name: Copying file
+        copy: 
+          src: test.txt
+          dest: /opt/test
+          mode: 755
+          owner: kmayer
+          group: ncrc 

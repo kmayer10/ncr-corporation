@@ -10,3 +10,9 @@
         yum: 
           name: ntp
           state: present
+
+      - name: Starting & Enabling NTPD Service
+        service: 
+          name: ntpd
+          state: started
+          enabled: yes
