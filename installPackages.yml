@@ -1,0 +1,15 @@
+---
+  - name: Installing packages
+
+    hosts: ncr
+
+    become: yes
+    
+    tasks: 
+      - name: Installing packages
+
+        yum: 
+          state: present
+          name: 
+            - git
+            - maven
