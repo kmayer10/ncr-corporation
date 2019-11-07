@@ -1,0 +1,12 @@
+---
+
+  - name: Installing NTP
+    hosts: ncr
+
+    become: yes
+
+    tasks:
+      - name: Installinng NTP package
+        yum: 
+          name: ntp
+          state: present
