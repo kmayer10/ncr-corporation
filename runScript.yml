@@ -1,0 +1,19 @@
+---
+
+  - name: running Script on Remote machine
+    hosts: ncr
+
+    tasks: 
+      - name: running script
+        script: script.sh
+        register: output
+
+      - name: printing output for Script module
+        debug: var=output.stdout_lines
+
+      - name: running command
+        shell: ls -ltr && pwd
+        register: output
+
+      - name: printing output
+        debug: var=output.stdout_lines

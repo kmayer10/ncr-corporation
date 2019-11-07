@@ -7,6 +7,9 @@
 
     become_user: root
 
+    vars: 
+      user: "{{ username }}"
+
     tasks: 
 
       - name: Creating Group
@@ -14,7 +17,7 @@
 
       - name: Creating User
         user: 
-          name: kmayer
+          name: "{{ user }}"
           group: ncrc
           home: /home/kmayer-10
           state: present
