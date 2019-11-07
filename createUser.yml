@@ -14,6 +14,8 @@
 
       - name: Creating Group
         group: name=ncrc state=present
+        tags:
+          - userwithgroup
 
       - name: Creating User
         user: 
@@ -21,3 +23,6 @@
           group: ncrc
           home: /home/kmayer-10
           state: present
+        tags: 
+          - useronly
+          - userwithgroup
