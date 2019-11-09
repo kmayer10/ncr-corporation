@@ -2,8 +2,8 @@
   - name: Installing packages
 
     hosts: ncr
-
-    become: yes
+    remote_user: root
+#    become: yes
     
     tasks: 
       - name: Installing packages
@@ -13,3 +13,18 @@
           name: 
             - git
             - maven
+
+        when: ansible_distribution == "CentOS"
+
+
+      - name: Installing packages in Ubuntu
+
+        apt:
+          state: present
+          name:
+            - git
+            - maven
+
+        when: ansible_distribution == "Ubuntu"
+
+

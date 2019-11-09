@@ -1,0 +1,13 @@
+---
+
+  - name: check Remote User
+    hosts: 54.209.216.149
+    remote_user: ubuntu
+
+    tasks: 
+      - name: shell on ubuntu
+        shell: cat /etc/os-release
+        register: var
+
+      - name: print outout
+        debug: var=var.stdout_lines
